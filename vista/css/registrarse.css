@@ -1,0 +1,98 @@
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f3f4f6;
+}
+
+.register-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; 
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px; /* Reducir espacio entre el título y el formulario */
+    font-size: 20px; /* Reducir el tamaño de la fuente */
+}
+
+.input-container {
+    margin-bottom: 15px; /* Reducir el espacio entre los campos */
+}
+
+.input-container label {
+    display: block;
+    font-size: 14px; /* Reducir el tamaño de la fuente */
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.input-container input,
+.role-selection select {
+    width: 100%;
+    padding: 8px; /* Reducir el padding de los campos */
+    font-size: 16px; /* Reducir el tamaño de la fuente */
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.input-container input:focus,
+.role-selection select:focus {
+    border-color: #4CAF50;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px; /* Reducir el padding del botón */
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px; /* Reducir el tamaño de la fuente */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 18px; /* Reducir espacio */
+}
+
+.login-link p {
+    font-size: 16px; /* Reducir el tamaño de la fuente */
+    color: #666;
+}
+
+.login-link a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.role-selection {
+    margin-bottom: 15px; /* Reducir el espacio entre los campos */
+}

@@ -1,0 +1,145 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    background-color: #0044cc;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-brand h1 {
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #0033a0;
+}
+
+.perfil-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Estilo para el formulario */
+.form-container {
+    margin-top: 100px;  
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #5C6BC0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #3e4b9e;
+}
+
+.response-options {
+    margin-bottom: 20px;
+}
+
+.response-options div {
+    margin-bottom: 10px;
+}
+
+.response-options input[type="text"] {
+    width: 80%;
+}
+
+.correct-answer {
+    background-color: #008000;
+   
+}
+/* Botón Agregar Respuesta */
+#add-answer-button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    background-color: #008000;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#add-answer-button:hover {
+    background-color: #005f00;
+    transform: scale(1.05);
+}
+
+/* Botón Guardar Pregunta */
+button[type="submit"] {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    background-color: #0044cc;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0033a0;
+    transform: scale(1.05);
+}

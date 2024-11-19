@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Bonito</title>
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+<body>
+    <div class="login-container">
+        <form id="login-form">
+            <h2>Iniciar sesión</h2>
+            <div class="input-container">
+                <label for="username">Email</label>
+                <input type="text" id="email" name="email" placeholder="Ingresa tu email" required>
+            </div>
+            <div class="input-container">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+            </div>
+            <button type="submit" class="submit-btn">Acceder</button>
+            <div class="register-link">
+                <p>¿No tienes cuenta? <a href="registrarse.html">Regístrate</a></p>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+      <!-- Lógica del Frontend -->
+    <script src="js/login.js"></script>
+</body>
+</html>

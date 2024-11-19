@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Reactivos</title>
+    <link rel="stylesheet" href="css/profesor.css">
+    <link rel="stylesheet" href="css/preguntas.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>Sistema de Reactivos</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="profesor.html">Inicio</a></li>
+            <li><a href="#agregar-pregunta">Agregar Preguntas</a></li>
+            <li id="correo_li"><p>Correo del profesor: <span id="correoUsuario"></span></p></li>
+            <li><a href="#perfil"><img src="perfil-icono.png" alt="Perfil" class="perfil-icon"></a></li>
+        </ul>
+    </nav>
+
+    <div id="inicio" class="container">
+        <header>
+            <h2>Listado de Preguntas</h2>
+        </header>
+        <table class="reactivos-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Área</th>
+                    <th>Definición Operacional</th>
+                    <th>Base de Reactivo</th>
+                    <th>Argumentación </th>
+                    <th>Tipo de Respuesta </th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="preguntas_profesores">
+               <!--AGREGAR CONTENIDO DINAMICAMENTE--> 
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <form id="question-form">
+            <label for="area">Área</label>
+            <input type="text" id="area" required>
+    
+            <label for="definicion">Definición Operacional</label>
+            <input type="text" id="definicion" required>
+    
+            <label for="base">Base de Reactivo</label>
+            <input type="text" id="base" required>
+    
+            <label for="argumentacion">Argumentación</label>
+            <input type="text" id="argumentacion" required>
+    
+            <label for="respuestaTipo">Tipo de Respuesta</label>
+            <select id="respuestaTipo">
+                <option value="verdadero-falso">Verdadero/Falso</option>
+                <option value="opcion-multiple">Opción Múltiple</option>
+            </select>
+    
+            <div id="respuesta-container" class="response-options">
+                <div id="respuesta1">
+                    <input type="text" id="respuesta1-input" placeholder="Respuesta 1">
+                    <button type="button" class="button" onclick="setCorrectAnswer(1)">Marcar como correcta</button>
+                    <button type="button" class="button eliminar" onclick="removeAnswer(1)">Eliminar</button>
+                </div>
+                <div id="respuesta2">
+                    <input type="text" id="respuesta2-input" placeholder="Respuesta 2">
+                    <button type="button" class="button" onclick="setCorrectAnswer(2)">Marcar como correcta</button>
+                    <button type="button" class="button eliminar" onclick="removeAnswer(2)">Eliminar</button>
+                </div>
+            </div>
+    
+            <button type="button" class="button" id="add-answer-button">Agregar Respuesta</button>
+            <button type="submit" class="button">Guardar Pregunta</button>
+        </form>
+    </div>
+    <script>
+        let answerCount = 2; // Contador de respuestas
+    
+        // Función para actualizar los botones de eliminar según el tipo de respuesta
+        function updateDeleteButtons() {
+            const respuestaTipo = document.getElementById('respuestaTipo').value;
+            const eliminarButtons = document.querySelectorAll('.eliminar');
+    
+            if (respuestaTipo === "verdadero-falso") {
+                // Deshabilitar botones de eliminar en verdadero/falso
+                eliminarButtons.forEach(button => {
+                    button.style.display = 'none'; // Ocultar botones de eliminar
+                });
+            } else {
+                // Habilitar botones de eliminar en opción múltiple
+                eliminarButtons.forEach(button => {
+                    button.style.display = 'inline-block'; // Mostrar botones de eliminar
+                });
+            }
+        }
+    
+        // Función para agregar respuestas
+        document.getElementById('add-answer-button').addEventListener('click', () => {
+            const respuestaTipo = document.getElementById('respuestaTipo').value;
+    
+            if (respuestaTipo === "verdadero-falso" && answerCount >= 2) {
+                alert('No puedes agregar más respuestas para una pregunta de verdadero/falso.');
+            } else if (respuestaTipo === "opcion-multiple" && answerCount < 6) {
+                answerCount++;
+                const newAnswerDiv = document.createElement('div');
+                newAnswerDiv.id = 'respuesta' + answerCount;
+                newAnswerDiv.innerHTML = `
+                    <input type="text" id="respuesta${answerCount}-input" placeholder="Respuesta ${answerCount}">
+                    <button type="button" class="button" onclick="setCorrectAnswer(${answerCount})">Marcar como correcta</button>
+                    <button type="button" class="button eliminar" onclick="removeAnswer(${answerCount})">Eliminar</button>
+                `;
+                document.getElementById('respuesta-container').appendChild(newAnswerDiv);
+                updateDeleteButtons();
+            } else if (respuestaTipo === "opcion-multiple" && answerCount >= 6) {
+                alert('No puedes agregar más de 6 respuestas.');
+            }
+        });
+    
+        // Función para marcar la respuesta correcta
+        function setCorrectAnswer(respuestaId) {
+            const allInputs = document.querySelectorAll('#respuesta-container input');
+            allInputs.forEach(input => {
+                input.style.backgroundColor = '';  // Limpiar el color de fondo de todas las respuestas
+            });
+
+            // Cambiar el color de fondo de la respuesta correcta
+            const respuestaInput = document.getElementById('respuesta' + respuestaId + '-input');
+            respuestaInput.style.backgroundColor = '#c8e6c9';  // Color verde para la respuesta correcta
+        }
+
+
+        
+    
+        // Función para eliminar respuestas
+        function removeAnswer(respuestaId) {
+            const answerDiv = document.getElementById('respuesta' + respuestaId);
+            answerDiv.remove();
+            answerCount--;
+            updateDeleteButtons();
+        }
+    
+        // Manejo del cambio en el tipo de respuesta
+        document.getElementById('respuestaTipo').addEventListener('change', function() {
+            // Eliminar respuestas adicionales si es "verdadero-falso"
+            if (this.value === "verdadero-falso") {
+                while (answerCount > 2) {
+                    removeAnswer(answerCount);
+                }
+            }
+            updateDeleteButtons();
+        });
+    
+        // Inicializar botones de eliminar al cargar la página
+        updateDeleteButtons();
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+      <!-- Lógica del Frontend -->
+    <script src="js/profesor.js"></script>
+</body>
+</html>
