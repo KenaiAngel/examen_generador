@@ -81,3 +81,17 @@ UNION ALL
 SELECT correo FROM profesor;
 
 ALTER TABLE pregunta ADD tipo_respuesta BOOLEAN NOT NULL DEFAULT 0; # de tipo  BOOLEAN de respuesta 0 es de opción múltiple y 1 verdadero o falso
+
+CREATE VIEW vista_pregunta_respuesta AS
+SELECT 
+    p.id_pregunta,
+    p.base_reactivo,
+    p.tipo_respuesta,
+    r.id_respuesta,
+    r.descripcion,
+    r.es_correcta,
+    p.argumentacion  -- Agregamos la columna de argumentación de la tabla pregunta
+FROM 
+    pregunta p
+JOIN 
+    respuesta r ON p.id_pregunta = r.id_pregunta;

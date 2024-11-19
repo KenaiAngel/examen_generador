@@ -257,13 +257,11 @@ $(document).ready(function() {
                 }
             });
         });
-        
-        
-        
 
         
     } else {
         console.log('No se recibió ningún correo.');
         alert('No se recibió el correo. Por favor, inicia sesión nuevamente.');
+        window.location.href = 'login.html' ;
     }
 });

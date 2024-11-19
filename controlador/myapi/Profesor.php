@@ -84,6 +84,7 @@
                         if ($usuario->password == $storedPassword) {
                             $this->data['status'] = "success";
                             $this->data['message'] = "Acceso Autorizado";
+                            $this->data['usuario'] = "Estudiante";
                         } else {
                             $this->data['message'] = "Acceso Denegado, clave incorrecta";
                         }
@@ -100,6 +101,7 @@
                             if ($usuario->password == $storedPassword) {
                                 $this->data['status'] = "success";
                                 $this->data['message'] = "Acceso Autorizado";
+                                $this->data['usuario'] = "Profesor";
                             } else {
                                 $this->data['message'] = "Acceso Denegado, clave incorrecta";
                             }

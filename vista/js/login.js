@@ -47,7 +47,13 @@ $('#login-form').submit(e => {
             //Correo no registrado
             
             if(msj.message==="Acceso Autorizado"){
-                window.location.href = 'profesor.html?correo=' + encodeURIComponent(user.email);
+                if(msj.usuario==="Estudiante"){
+                    window.location.href = 'estudiante.html?correo=' + encodeURIComponent(user.email);
+                }
+                else{
+                    window.location.href = 'profesor.html?correo=' + encodeURIComponent(user.email);
+                }
+                
             }
             else{
                 alert(msj.message);

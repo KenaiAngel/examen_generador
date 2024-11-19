@@ -1,0 +1,95 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9fb;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Títulos */
+h1 {
+    font-size: 2rem;
+    color: #4caf50;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Puntaje */
+#score {
+    font-size: 1.25rem;
+    color: #4caf50;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Detalles de respuestas */
+#details {
+    text-align: left;
+    margin-top: 20px;
+}
+
+#details div {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#details div h3 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+#details div p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* Respuestas correctas/incorrectas */
+#details div.correct {
+    border-color: #4caf50;
+    background-color: #e8f5e9;
+}
+
+#details div.incorrect {
+    border-color: #f44336;
+    background-color: #fdecea;
+}
+
+/* Estilo del botón "Regresar al Inicio" */
+#home-btn {
+    background-color: #28a745; /* Fondo verde */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 12px 25px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a mano */
+    margin-top: 20px; /* Espaciado superior */
+    display: inline-block; /* Para que el botón no ocupe todo el ancho */
+    text-align: center; /* Centrado del texto */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar color */
+}
+
+/* Efecto hover para el botón */
+#home-btn:hover {
+    background-color: #218838; /* Cambio de color al pasar el mouse */
+}
+
+

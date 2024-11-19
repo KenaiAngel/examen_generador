@@ -1,0 +1,124 @@
+/* Wrapper contenedor */
+.wrapper-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 4 columnas como máximo */
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 20px; /* Espacio interno del contenedor */
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Card */
+.card {
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Animación al pasar el mouse */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más marcada */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.card-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Botón Empezar Examen */
+.btn {
+    background-color: #007bff; /* Azul */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white; /* Color del texto */
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+}
+
+
+
+/* Contenedor de historial */
+.history-container {
+    background-color: #f8f9fa; /* Fondo claro */
+    border: 1px solid #e0e0e0; /* Borde sutil */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.history-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Grid de resultados */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Máximo 4 columnas */
+    gap: 20px; /* Espacio entre tarjetas */
+}
+
+/* Tarjetas de resultados */
+.result-card {
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-5px); /* Animación flotante */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más marcada */
+}
+
+.result-card p {
+    margin: 10px 0;
+    color: #555;
+    font-size: 16px;
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Gris */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268; /* Gris más oscuro */
+}

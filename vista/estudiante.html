@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen de Sistemas Operativos</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/examen.css">
+    <link rel="stylesheet" href="css/dinamico.css">
+
+</head>
+<body>
+    <div id="historial">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Sistema de Reactivos</h1>
+            </div>
+            <ul class="nav-links">
+                <li id="correo_li"><p>Correo del profesor: <span id="correoUsuario"></span></p></li>
+                <li>
+                    <button class="btn-logout btn btn-info">
+                        <a href="login.html" style="text-decoration: none; color: white;">Logout</a>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <br>
+        <br>
+        <br>
+     
+    
+        <section class="home">
+            <div class="wrapper">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h1 class="card-title">Examen Sistemas Operativos - Nivel 1</h1>
+                        <p class="card-text">Este examen es para evaluar tu nivel en el área de sistemas operativos.</p>
+                        <button class="btn btn-primary" id="empezarExamen">
+                            Empezar Examen
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Historial -->
+            <div class="history-container">
+                <h2 class="history-title">Historial</h2>
+                <div class="results-grid">
+                    <!-- Tarjeta 1 -->
+                    <div class="result-card">
+                        <p>Número: <span>1</span></p>
+                        <p>Puntuación: <span>95%</span></p>
+                        <p>Fecha: <span>2024-11-18</span></p>
+                        <button class="btn-secondary">Ver resultados</button>
+                    </div>
+                    <!-- Tarjeta 2 -->
+                    <div class="result-card">
+                        <p>Número: <span>2</span></p>
+                        <p>Puntuación: <span>88%</span></p>
+                        <p>Fecha: <span>2024-11-10</span></p>
+                        <button class="btn-secondary">Ver resultados</button>
+                    </div>
+                    <!-- Tarjeta 3 -->
+                    <div class="result-card">
+                        <p>Número: <span>3</span></p>
+                        <p>Puntuación: <span>78%</span></p>
+                        <p>Fecha: <span>2024-11-05</span></p>
+                        <button class="btn-secondary">Ver resultados</button>
+                    </div>
+                    <!-- Tarjeta 4 -->
+                    <div class="result-card">
+                        <p>Número: <span>4</span></p>
+                        <p>Puntuación: <span>89%</span></p>
+                        <p>Fecha: <span>2024-11-01</span></p>
+                        <button class="btn-secondary">Ver resultados</button>
+                    </div>
+                    <!-- Agregar más tarjetas según sea necesario -->
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <div id="contenedor-examen">
+        
+    </div>
+
+    
+
+    
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <!-- Lógica del Frontend -->
+    <script src="js/examen.js"></script>
+</body>
+</html>
